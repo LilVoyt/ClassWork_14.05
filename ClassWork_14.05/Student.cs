@@ -11,16 +11,16 @@ namespace ClassWork_14._05
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDay { get; set; }
-        public string UniversityName { get; set; }
         public double AvgGrade { get; set; }
+        public int UniversityID { get; set; }
 
-        public Student(string firstName, string lastName, DateTime birthDay, string universityName, double avgGrade)
+        public Student(string firstName, string lastName, DateTime birthDay, double avgGrade, int universityID)
         {
             FirstName = firstName;
             LastName = lastName;
             BirthDay = birthDay;
-            UniversityName = universityName;
             AvgGrade = avgGrade;
+            UniversityID = universityID;
         }
     }
 }
