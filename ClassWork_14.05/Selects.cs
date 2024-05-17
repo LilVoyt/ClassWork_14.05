@@ -33,5 +33,15 @@ namespace ClassWork_14._05
                 sw.WriteLine(json);
             }
         }
+
+        public static void SelectTop(List<Student> students, int number)
+        {
+            var res = students.OrderByDescending(student => student.AvgGrade).Take(number);
+
+            foreach(var student in res)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName} {student.AvgGrade}");
+            }
+        }
     }
 }
