@@ -13,7 +13,7 @@ namespace ClassWork_14._05
             StudentsList studentsList = new StudentsList();
             TeacherList teacherList = new TeacherList();
             UniversityList universityList = new UniversityList();
-            Selects.JoinByName(teacherList, universityList.Universities, "Harvard University");
+            studentsList.JoinByName(universityList.Universities, "Harvard University");
         }
     }
 }
