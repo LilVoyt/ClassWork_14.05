@@ -14,5 +14,10 @@ namespace ClassWork_14._05
             Universities = new List<University>();
             FillLists.GetUniversities(Universities);
         }
+
+        public void GetPeople(UniversityPeople people, string Name)
+        {
+            people.JoinByName(Universities, Name);
+        }
     }
 }
