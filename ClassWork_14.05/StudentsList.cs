@@ -8,20 +8,18 @@ using System.Threading.Tasks;
 
 namespace ClassWork_14._05
 {
-    internal class StudentsList
+    internal class StudentsList : ListToSelect
     {
-        public List<Student> Students { get; set; }
-        public int StudentsNumber { get; set; }
+        public List<Student> list { get; set; }
         public StudentsList()
         {
-            Students = new List<Student>();
-            StudentsNumber = Students.Count;
-            FillLists.FillStudents(Students);
+            list = new List<Student>();
+            FillLists.FillStudents(list);
         }
         
         public string SelectAllStudent()
         {
-            var Arr = Students.OrderBy(i => i.LastName).ToList();
+            var Arr = list.OrderBy(i => i.LastName).ToList();
 
             string res = "";
             foreach (Student student in Arr)
@@ -32,25 +30,9 @@ namespace ClassWork_14._05
 
             return res;
         }
-
-        //public string SelectStudentsUniversities(string university)
-        //{
-        //    List<Student> Arr = Students.Where(i => i.UniversityName == university).ToList();
-        //    string res = "";
-
-        //    foreach (Student student in Arr)
-        //    {
-        //        res += $"{student.FirstName}, {student.LastName}, {student.UniversityName} \n";
-        //    }
-
-        //    WriteToFile(Arr, $"{university}_Students.txt");
-
-        //    return res;
-        //}
-
         public string SelectByName(string syb)
         {
-            List<Student> Arr = Students.Where(i => i.FirstName.StartsWith(syb)).ToList();
+            List<Student> Arr = list.Where(i => i.FirstName.StartsWith(syb)).ToList();
             string res = "";
 
             foreach (Student student in Arr)
@@ -80,6 +62,30 @@ namespace ClassWork_14._05
                 students = JsonConvert.DeserializeObject<List<Student>>(sr.ReadToEnd());
             }
             return students;
+        }
+
+        public override void JoinByName(List<University> universities, string Name)
+        {
+            var res = this.list.Join(universities,
+                student => student.UniversityID,
+                university => university.ID,
+                (student, university) => new
+                {
+                    UniversityName = string.Format($"{university.Name}"),
+                    StudentName = string.Format($"{student.FirstName} {student.LastName}"),
+                    Grade = string.Format($"Grade: {student.AvgGrade}")
+                }
+                ).Where(university => university.UniversityName == Name);
+            foreach (var i in res)
+            {
+                Console.WriteLine($"{i.UniversityName} => {i.StudentName}, {i.Grade}");
+            }
+
+            using (StreamWriter sw = new StreamWriter($"{Name}_student.txt"))
+            {
+                string json = JsonConvert.SerializeObject(res);
+                sw.WriteLine(json);
+            }
         }
     }
 }

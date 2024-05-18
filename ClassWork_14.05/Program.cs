@@ -11,8 +11,9 @@ namespace ClassWork_14._05
         static void Main()
         {
             StudentsList studentsList = new StudentsList();
+            TeacherList teacherList = new TeacherList();
             UniversityList universityList = new UniversityList();
-            Selects.JoinStudUni(studentsList.Students, universityList.Universities, "Harvard University");
+            Selects.JoinByName(teacherList, universityList.Universities, "Harvard University");
         }
     }
 }

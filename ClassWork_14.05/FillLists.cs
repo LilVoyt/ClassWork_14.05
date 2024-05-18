@@ -38,6 +38,26 @@ namespace ClassWork_14._05
             universities.Add(new University(4, "California Institute of Technology (Caltech)", "Pasadena"));
             universities.Add(new University(5, "University of Oxford", "Oxford"));
         }
-
+        public static void FillTeachers(List<Teacher> teachers)
+        {
+            teachers.Add(new Teacher("Alice", "Smith", new DateTime(1975, 1, 1), "Mathematics", 1, 4.5));
+            teachers.Add(new Teacher("Bob", "Johnson", new DateTime(1980, 2, 2), "Physics", 2, 4.2));
+            teachers.Add(new Teacher("Charlie", "Brown", new DateTime(1978, 3, 3), "Chemistry", 3, 4.0));
+            teachers.Add(new Teacher("John", "Doe", new DateTime(1979, 5, 15), "Biology", 1, 3.8));
+            teachers.Add(new Teacher("Emily", "Smith", new DateTime(1981, 3, 20), "History", 3, 4.2));
+            teachers.Add(new Teacher("Michael", "Johnson", new DateTime(1977, 7, 10), "Computer Science", 2, 3.9));
+            teachers.Add(new Teacher("Sophia", "Brown", new DateTime(1982, 1, 5), "Economics", 1, 4.5));
+            teachers.Add(new Teacher("Daniel", "Wilson", new DateTime(1980, 9, 25), "Literature", 2, 3.7));
+            teachers.Add(new Teacher("Olivia", "Clark", new DateTime(1979, 11, 8), "Philosophy", 3, 4.0));
+            teachers.Add(new Teacher("Ethan", "Lee", new DateTime(1978, 4, 30), "Art", 4, 3.6));
+            teachers.Add(new Teacher("Emma", "Young", new DateTime(1981, 6, 12), "Music", 1, 4.1));
+            teachers.Add(new Teacher("William", "Hall", new DateTime(1976, 8, 18), "Engineering", 2, 3.9));
+            teachers.Add(new Teacher("Ava", "Taylor", new DateTime(1980, 2, 28), "Law", 2, 4.3));
+            teachers.Add(new Teacher("James", "Martin", new DateTime(1979, 10, 3), "Medicine", 2, 4.0));
+            teachers.Add(new Teacher("Isabella", "White", new DateTime(1981, 4, 17), "Psychology", 4, 3.8));
+            teachers.Add(new Teacher("Alexander", "Anderson", new DateTime(1980, 12, 22), "Physics", 2, 4.4));
+            teachers.Add(new Teacher("Mia", "Brown", new DateTime(1978, 6, 7), "Chemistry", 3, 3.5));
+            teachers.Add(new Teacher("Benjamin", "Jones", new DateTime(1979, 9, 9), "Mathematics", 4, 4.2));
+        }
     }
 }
