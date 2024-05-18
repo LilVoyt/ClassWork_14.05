@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClassWork_14._05
 {
-    internal class StudentsList : ListToSelect
+    internal class StudentsList : UniversityPeople
     {
         public List<Student> list { get; set; }
         public StudentsList()

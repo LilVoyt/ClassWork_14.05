@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FillLists.cs" />
-    <Compile Include="ListToSelect.cs" />
+    <Compile Include="UniversityPeople.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selects.cs" />

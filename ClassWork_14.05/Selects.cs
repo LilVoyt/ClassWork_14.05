@@ -10,7 +10,7 @@ namespace ClassWork_14._05
 {
     internal class Selects
     {
-        public static void JoinByName(ListToSelect listToSelect, List<University> universities, string Name)
+        public static void JoinByName(UniversityPeople listToSelect, List<University> universities, string Name)
         {
             listToSelect.JoinByName(universities, Name);
         }
